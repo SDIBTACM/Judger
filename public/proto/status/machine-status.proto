@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+option go_package = ".;status";
+
+message MachineStatus {
+    string hostname = 1;
+    string hostUuid = 2;
+    Load load = 3;
+    Memory memory = 4;
+    Docker docker = 5;
+    repeated Disk disk = 6;
+}
+
+message Load {
+    float oneMinLoad = 1;
+    float fiveMinLoad = 2;
+    float fifteenMinLoad = 3;
+    int32 procTotal = 4;
+    int32 procRunning = 5;
+    int32 procBlocked = 6;
+}
+
+message Memory {
+    uint64 totalMem = 1;
+    uint64 freeMem = 2;
+    uint64 totalSwap = 3;
+    uint64 freeSwap = 4;
+}
+
+message Disk {
+    string diskName = 1;
+    int32 totalInGb = 2;
+    int32 freeInGb = 3;
+}
+
+message Docker {
+    int32 running = 1;
+    int32 stopped = 2;
+    uint64 memoryUsage = 3;
+}
+

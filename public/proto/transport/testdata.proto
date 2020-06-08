@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+message data {
+    string filename = 1;
+    bytes fileMate = 2;
+    bytes data = 3;
+}
