@@ -16,6 +16,7 @@ import (
 	natsRegistry "github.com/micro/go-plugins/registry/nats/v2"
 	natsTransport "github.com/micro/go-plugins/transport/nats/v2"
 	"log"
+	"time"
 )
 
 const namespaceBase = "cn.edu.sdtbu.onlinejudge.judger"
@@ -45,6 +46,7 @@ func main() {
 		micro.Registry(reg),
 		micro.Broker(br),
 		micro.Transport(tran),
+		micro.RegisterInterval(15*time.Second),
 		micro.Version(version.Version),
 	)
 

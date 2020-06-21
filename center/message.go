@@ -24,5 +24,5 @@ func initMessageQue(client client.Client) {
 	RealStatusMsgPipe = micro.NewEvent(namespace("topic.realtime-status"), client)
 	FinalStatusMsgPipe = micro.NewEvent(namespace("topic.final-status"), client)
 
-	MachineStatusPipe = micro.NewEvent(namespace("topic.worker-status"), client)
+	MachineStatusPipe = micro.NewEvent(namespace("topic.machine-status"), client)
 }

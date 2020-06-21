@@ -17,7 +17,7 @@ import (
 type MachineStatus struct {
 }
 
-func (ms *MachineStatus) Process(ctx context.Context, machineStatus status.MachineStatusEvent) {
+func (ms *MachineStatus) Process(ctx context.Context, machineStatus *status.MachineStatus) {
 
 	machineStatusJson, err := json.Marshal(machineStatus)
 	if err != nil {
